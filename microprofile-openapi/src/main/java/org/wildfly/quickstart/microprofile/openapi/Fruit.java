@@ -16,8 +16,13 @@
  */
 package org.wildfly.quickstart.microprofile.openapi;
 
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
+
 public class Fruit {
 
+    //Uncomment one of the Schema annotations:
+    //@Schema(name = "name", description = "description") //OpenApi yaml is returned at /openapi:
+    @Schema(name = "name", description = "description á")  //Because of the char 'á' no content will be returned at /openapi:
     private final String name;
     private final String description;
 
